@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: pokemogukun
+    name: pokemogukunns
     env: python
     region: Oregon
     plan: free
