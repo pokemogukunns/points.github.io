@@ -184,7 +184,7 @@ app.mount("/word", StaticFiles(directory="./pokemogukunns", html=True), name="st
 app.mount("/category", StaticFiles(directory="./category", html=True), name="static")
 app.mount("/go", StaticFiles(directory="./go", html=True), name="static")
 app.mount("/assets", StaticFiles(directory="./assets", html=True), name="static")
-app.mount(".github", StaticFiles(directory="./.github", html=True), name="static")
+app.mount("/.github", StaticFiles(directory="./.github", html=True), name="static")
 app.mount("/file", StaticFiles(directory="./file", html=True), name="static")
 app.mount("/images", StaticFiles(directory="./images", html=True), name="static")
 app.mount("/js", StaticFiles(directory="./js", html=True), name="static")
