@@ -183,6 +183,13 @@ app.mount("/css", StaticFiles(directory="./css"), name="static")
 app.mount("/word", StaticFiles(directory="./pokemogukunns", html=True), name="static")
 app.mount("/category", StaticFiles(directory="./category", html=True), name="static")
 app.mount("/go", StaticFiles(directory="./go", html=True), name="static")
+app.mount("/assets", StaticFiles(directory="./assets", html=True), name="static")
+app.mount(".github", StaticFiles(directory="./.github", html=True), name="static")
+app.mount("/file", StaticFiles(directory="./file", html=True), name="static")
+app.mount("/images", StaticFiles(directory="./images", html=True), name="static")
+app.mount("/js", StaticFiles(directory="./js", html=True), name="static")
+app.mount("/media", StaticFiles(directory="./media", html=True), name="static")
+app.mount("/templates", StaticFiles(directory="./templates", html=True), name="static")
 app.add_middleware(GZipMiddleware, minimum_size=1000)
 
 from fastapi.templating import Jinja2Templates
