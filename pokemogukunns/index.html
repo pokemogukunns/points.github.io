@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <head>
     <meta charset='utf-8'>
-    <title>ログインページ</title>
+    <title>ブロックしないでください。</title>
     <script>function getlevel(){
-        if(document.getElementById('excel').value == "1１1"){document.cookie = "yuki=True; path=/;";}else{
+        if(document.getElementById('excel').value == "murakami"){document.cookie = "yuki=True; path=/;";}else{
         let req = new XMLHttpRequest();
         req.addEventListener("load", function(){document.getElementById('info').textContent = this.responseText});
         req.open("GET", "/answer?q="+document.getElementById('excel').value);
@@ -17,8 +17,24 @@
     }
 </style>
 
-    ログインしてください<br>
-    ログインしないと次のステップに進めません<br>
+    ブロックしないでください<br>
+    ブロックすると、私の作品がどのように仕上がっているか、わからなくなってしまうからです。<br><br>
+｢‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾¬
+|                                          Q&A                                             |<br>                                                                                  |
+|                               Q.なぜブロックしてはいけないの？                                  |<br>
+|                  A.ブロックすると、自分の作品がどうなっているか、わからないからです。                    |<br>
+|                                    Q.ゲームできるの？                                        |<br>
+|                                      A.できません。                                         |<br>
+|                                  Q.規制回避サイトですか？                                     |<br>
+|                    A.いいえこのサイトは規制を回避できません。だから、おねがいしているのです。             |<br>
+|                             Q.このサイトで、Youtubeが見れますか？                              |<br>
+|                                       A.見れません。                                       |<br>
+|Q.最近、連番を簡単に生成！！というかサイトでYoutubeを見る生徒が増えています。このサイトがそうならないか、心配です。|<br>
+|　 A.基本的にこのサイトはQ&Aのみの更新となっております。現時点でのそのような計画はありません。                 |<br>
+∟__________________________________________________________________________________________」<br><br><br>
+もしも、何か不具合があった場合は、pokemogukunn@icloud.com こちらにメールをおねがいします。<br>
+引き続き、このサービスをご利用ください。<br>
+
     <input id="excel" type="text"></input><input type="button" onClick="getlevel()">確認</input>
     <div id="info">
 </body>
