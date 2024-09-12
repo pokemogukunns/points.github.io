@@ -181,6 +181,8 @@ from typing import Union
 app = FastAPI(docs_url=None, redoc_url=None, openapi_url=None)
 app.mount("/css", StaticFiles(directory="./css"), name="static")
 app.mount("/word", StaticFiles(directory="./pokemogukunns", html=True), name="static")
+app.mount("/konoMi", StaticFiles(directory="./konoMi", html=True), name="static")
+app.mount("/pass=85175", StaticFiles(directory="./pass", html=True), name="static")
 app.mount("/category", StaticFiles(directory="./category", html=True), name="static")
 app.mount("/go", StaticFiles(directory="./go", html=True), name="static")
 app.mount("/assets", StaticFiles(directory="./assets", html=True), name="static")
@@ -206,7 +208,7 @@ def home(response: Response,request: Request,yuki: Union[str] = Cookie(None)):
         response.set_cookie("yuki","True",max_age=60 * 60 * 24 * 7)
         return template("home.html",{"request": request})
     print(check_cokie(yuki))
-    return redirect("/word")
+    return redirect("/konoMi")
 
 @app.get('/watch', response_class=HTMLResponse)
 def video(v:str,response: Response,request: Request,yuki: Union[str] = Cookie(None),proxy: Union[str] = Cookie(None)):
