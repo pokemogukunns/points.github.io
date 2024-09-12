@@ -1,0 +1,180 @@
+<h1>pokemogukunnの、プログラミングコーザ(HTML)</h1><br>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pokemogukunnの、プログラミングコーザ(HTML)</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        section {
+            margin-bottom: 20px;
+        }
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        button {
+            margin-top: 10px;
+            cursor: pointer;
+            padding: 5px 10px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>HTMLタグの基本的な使い方とコピー機能</h1>
+
+<section>
+    <h2>1. メタ情報やSEO関連のタグ</h2>
+    <p>ページのメタ情報やSEOに関連するタグです。</p>
+    <pre id="meta-tags">
+&lt;meta charset="UTF-8"&gt;
+&lt;meta name="description" content="ページの説明"&gt;
+&lt;meta name="keywords" content="HTML, CSS, JavaScript"&gt;
+&lt;link rel="stylesheet" href="styles.css"&gt;
+    </pre>
+    <button onclick="copyCode('meta-tags')">コピー</button>
+</section>
+
+<section>
+    <h2>2. スクリプトとスタイルのタグ</h2>
+    <p>CSSスタイルやJavaScriptを埋め込むためのタグです。</p>
+    <pre id="script-style-tags">
+&lt;style&gt;
+    body { background-color: lightblue; }
+&lt;/style&gt;
+
+&lt;script&gt;
+    alert("ページが読み込まれました");
+&lt;/script&gt;
+
+&lt;script src="script.js"&gt;&lt;/script&gt;
+    </pre>
+    <button onclick="copyCode('script-style-tags')">コピー</button>
+</section>
+
+<section>
+    <h2>3. マルチメディア関連のタグ</h2>
+    <p>音声や動画、その他のメディアを埋め込むためのタグです。</p>
+    <pre id="media-tags">
+&lt;audio controls&gt;
+    &lt;source src="audio.mp3" type="audio/mpeg"&gt;
+    お使いのブラウザはオーディオタグをサポートしていません。
+&lt;/audio&gt;
+
+&lt;video controls width="300"&gt;
+    &lt;source src="video.mp4" type="video/mp4"&gt;
+    お使いのブラウザはビデオタグをサポートしていません。
+&lt;/video&gt;
+
+&lt;embed src="file.pdf" width="500" height="375"&gt;
+
+&lt;iframe src="https://example.com" width="600" height="400"&gt;
+    このブラウザはiframeをサポートしていません。
+&lt;/iframe&gt;
+    </pre>
+    <button onclick="copyCode('media-tags')">コピー</button>
+</section>
+
+<section>
+    <h2>4. セマンティックHTMLタグ</h2>
+    <p>ページの意味を明確にするためのセマンティックなタグです。</p>
+    <pre id="semantic-tags">
+&lt;article&gt;
+    &lt;h2&gt;記事タイトル&lt;/h2&gt;
+    &lt;p&gt;この記事の内容。&lt;/p&gt;
+&lt;/article&gt;
+
+&lt;aside&gt;
+    これは補足情報です。
+&lt;/aside&gt;
+
+&lt;header&gt;
+    これはヘッダーです。
+&lt;/header&gt;
+
+&lt;footer&gt;
+    これはフッターです。
+&lt;/footer&gt;
+
+&lt;nav&gt;
+    &lt;ul&gt;
+        &lt;li&gt;&lt;a href="#home"&gt;ホーム&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#about"&gt;概要&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/nav&gt;
+    </pre>
+    <button onclick="copyCode('semantic-tags')">コピー</button>
+</section>
+
+<section>
+    <h2>5. フォーム要素</h2>
+    <p>ユーザーからの入力を受け取るためのフォーム要素です。</p>
+    <pre id="form-tags">
+&lt;form&gt;
+    &lt;label&gt;名前: &lt;input type="text" name="name"&gt;&lt;/label&gt;&lt;br&gt;
+    &lt;label&gt;パスワード: &lt;input type="password" name="password"&gt;&lt;/label&gt;&lt;br&gt;
+    &lt;textarea name="message"&gt;ここにメッセージを入力&lt;/textarea&gt;&lt;br&gt;
+    &lt;select name="options"&gt;
+        &lt;option value="option1"&gt;オプション1&lt;/option&gt;
+        &lt;option value="option2"&gt;オプション2&lt;/option&gt;
+    &lt;/select&gt;&lt;br&gt;
+    &lt;input type="submit" value="送信"&gt;
+&lt;/form&gt;
+    </pre>
+    <button onclick="copyCode('form-tags')">コピー</button>
+</section>
+
+<section>
+    <h2>6. テーブル要素</h2>
+    <p>表を作成するための要素です。</p>
+    <pre id="table-tags">
+&lt;table&gt;
+    &lt;tr&gt;
+        &lt;th&gt;項目1&lt;/th&gt;
+        &lt;th&gt;項目2&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;データ1&lt;/td&gt;
+        &lt;td&gt;データ2&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;
+    </pre>
+    <button onclick="copyCode('table-tags')">コピー</button>
+</section>
+
+<section>
+    <h2>7. グラフィックと描画のタグ</h2>
+    <p>グラフィックやベクター画像を描画するためのタグです。</p>
+    <pre id="graphic-tags">
+&lt;canvas id="myCanvas" width="200" height="100"&gt;
+    このブラウザはcanvasをサポートしていません。
+&lt;/canvas&gt;
+
+&lt;svg width="100" height="100"&gt;
+    &lt;circle cx="50" cy="50" r="40" stroke="black" stroke-width="3" fill="red" /&gt;
+&lt;/svg&gt;
+    </pre>
+    <button onclick="copyCode('graphic-tags')">コピー</button>
+</section>
+
+<script>
+    function copyCode(elementId) {
+        var code = document.getElementById(elementId).innerText;
+        var tempTextArea = document.createElement("textarea");
+        tempTextArea.value = code;
+        document.body.appendChild(tempTextArea);
+        tempTextArea.select();
+        document.execCommand("copy");
+        document.body.removeChild(tempTextArea);
+        alert("コードがコピーされました！");
+    }
+</script>
+
+</body>
+</html>
