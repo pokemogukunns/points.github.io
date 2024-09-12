@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSSの基本的な使い方(pokemogukunnのプログラミングコーザ)</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        section {
+            margin-bottom: 20px;
+        }
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        button {
+            margin-top: 10px;
+            cursor: pointer;
+            padding: 5px 10px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>CSSの基本的な使い方とコピー機能</h1>
+
+<section>
+    <h2>1. インラインスタイル</h2>
+    <p>HTML要素に直接スタイルを適用する方法です。</p>
+    <pre id="inline-style">
+&lt;h1 style="color: blue;"&gt;こんにちは！&lt;/h1&gt;
+    </pre>
+    <button onclick="copyCode('inline-style')">コピー</button>
+</section>
+
+<section>
+    <h2>2. 内部スタイルシート</h2>
+    <p>HTMLドキュメントの`&lt;head&gt;`タグ内にスタイルを定義します。</p>
+    <pre id="internal-style">
+&lt;style&gt;
+    h1 {
+        color: red;
+    }
+&lt;/style&gt;
+&lt;h1&gt;こんにちは！&lt;/h1&gt;
+    </pre>
+    <button onclick="copyCode('internal-style')">コピー</button>
+</section>
+
+<section>
+    <h2>3. 外部スタイルシート</h2>
+    <p>外部CSSファイルをHTMLにリンクしてスタイルを適用する方法です。</p>
+    <pre id="external-style">
+&lt;link rel="stylesheet" href="styles.css"&gt;
+    </pre>
+    <button onclick="copyCode('external-style')">コピー</button>
+</section>
+
+<section>
+    <h2>4. クラスセレクタ</h2>
+    <p>クラスセレクタを使って、複数の要素に同じスタイルを適用します。</p>
+    <pre id="class-selector">
+&lt;style&gt;
+    .highlight {
+        color: green;
+        font-weight: bold;
+    }
+&lt;/style&gt;
+&lt;p class="highlight"&gt;このテキストは強調されています。&lt;/p&gt;
+    </pre>
+    <button onclick="copyCode('class-selector')">コピー</button>
+</section>
+
+<section>
+    <h2>5. IDセレクタ</h2>
+    <p>IDセレクタを使って、特定の要素にスタイルを適用します。</p>
+    <pre id="id-selector">
+&lt;style&gt;
+    #unique {
+        color: orange;
+        text-align: center;
+    }
+&lt;/style&gt;
+&lt;p id="unique"&gt;このテキストはIDセレクタでスタイルが適用されています。&lt;/p&gt;
+    </pre>
+    <button onclick="copyCode('id-selector')">コピー</button>
+</section>
+
+<section>
+    <h2>6. 要素セレクタ</h2>
+    <p>要素の種類ごとにスタイルを適用します。</p>
+    <pre id="element-selector">
+&lt;style&gt;
+    p {
+        color: purple;
+        font-size: 18px;
+    }
+&lt;/style&gt;
+&lt;p&gt;この段落は要素セレクタでスタイルが適用されています。&lt;/p&gt;
+    </pre>
+    <button onclick="copyCode('element-selector')">コピー</button>
+</section>
+
+<section>
+    <h2>7. 擬似クラス</h2>
+    <p>マウスホバーなど、特定の状態にある要素にスタイルを適用します。</p>
+    <pre id="pseudo-class">
+&lt;style&gt;
+    a:hover {
+        color: red;
+    }
+&lt;/style&gt;
+&lt;a href="#"&gt;リンクにカーソルを合わせてみてください&lt;/a&gt;
+    </pre>
+    <button onclick="copyCode('pseudo-class')">コピー</button>
+</section>
+
+<section>
+    <h2>8. フレックスボックス</h2>
+    <p>レイアウトを作成するためのフレキシブルなボックスモデルです。</p>
+    <pre id="flexbox">
+&lt;style&gt;
+    .container {
+        display: flex;
+        justify-content: space-between;
+    }
+    .item {
+        background-color: lightblue;
+        padding: 10px;
+        margin: 5px;
+    }
+&lt;/style&gt;
+&lt;div class="container"&gt;
+    &lt;div class="item"&gt;アイテム1&lt;/div&gt;
+    &lt;div class="item"&gt;アイテム2&lt;/div&gt;
+    &lt;div class="item"&gt;アイテム3&lt;/div&gt;
+&lt;/div&gt;
+    </pre>
+    <button onclick="copyCode('flexbox')">コピー</button>
+</section>
+
+<section>
+    <h2>9. グリッドレイアウト</h2>
+    <p>2次元のレイアウトを作成するためのCSSグリッドシステムです。</p>
+    <pre id="grid-layout">
+&lt;style&gt;
+    .grid-container {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        gap: 10px;
+    }
+    .grid-item {
+        background-color: lightgreen;
+        padding: 20px;
+        text-align: center;
+    }
+&lt;/style&gt;
+&lt;div class="grid-container"&gt;
+    &lt;div class="grid-item"&gt;1&lt;/div&gt;
+    &lt;div class="grid-item"&gt;2&lt;/div&gt;
+    &lt;div class="grid-item"&gt;3&lt;/div&gt;
+    &lt;div class="grid-item"&gt;4&lt;/div&gt;
+    &lt;div class="grid-item"&gt;5&lt;/div&gt;
+    &lt;div class="grid-item"&gt;6&lt;/div&gt;
+&lt;/div&gt;
+    </pre>
+    <button onclick="copyCode('grid-layout')">コピー</button>
+</section>
+
+<section>
+    <h2>10. メディアクエリ</h2>
+    <p>レスポンシブデザインを実現するために、画面サイズに応じてスタイルを変更します。</p>
+    <pre id="media-query">
+&lt;style&gt;
+    body {
+        background-color: white;
+    }
+    @media (max-width: 600px) {
+        body {
+            background-color: lightgrey;
+        }
+    }
+&lt;/style&gt;
+&lt;p&gt;画面サイズを600px以下にすると背景色が変わります。&lt;/p&gt;
+    </pre>
+    <button onclick="copyCode('media-query')">コピー</button>
+</section>
+
+<script>
+    function copyCode(elementId) {
+        var code = document.getElementById(elementId).innerText;
+        var tempTextArea = document.createElement("textarea");
+        tempTextArea.value = code;
+        document.body.appendChild(tempTextArea);
+        tempTextArea.select();
+        document.execCommand("copy");
+        document.body.removeChild(tempTextArea);
+        alert("コードがコピーされました！");
+    }
+</script>
+
+</body>
+</html>
