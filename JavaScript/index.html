@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScriptタグの基本的な使い方とコピー機能</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        section {
+            margin-bottom: 20px;
+        }
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        button {
+            margin-top: 10px;
+            cursor: pointer;
+            padding: 5px 10px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>JavaScriptの基本的な使い方とコピー機能</h1>
+
+<section>
+    <h2>1. 基本的なJavaScriptの埋め込み</h2>
+    <p>JavaScriptをHTMLに直接埋め込む方法です。HTML内の`&lt;script&gt;`タグ内にJavaScriptコードを記述します。</p>
+    <pre id="basic-script">
+&lt;script&gt;
+    alert('Hello, World!');
+&lt;/script&gt;
+    </pre>
+    <button onclick="copyCode('basic-script')">コピー</button>
+</section>
+
+<section>
+    <h2>2. 外部JavaScriptファイルを読み込む</h2>
+    <p>外部のJavaScriptファイルをHTMLに読み込む方法です。JavaScriptファイルを再利用しやすくするために使われます。</p>
+    <pre id="external-script">
+&lt;script src="script.js"&gt;&lt;/script&gt;
+    </pre>
+    <button onclick="copyCode('external-script')">コピー</button>
+</section>
+
+<section>
+    <h2>3. イベントリスナーを使ったインタラクション</h2>
+    <p>JavaScriptでイベントリスナーを使い、ユーザーの操作に応じて処理を行う方法です。</p>
+    <pre id="event-listener">
+&lt;button id="myButton"&gt;クリックして！&lt;/button&gt;
+&lt;script&gt;
+    document.getElementById('myButton').addEventListener('click', function() {
+        alert('ボタンがクリックされました！');
+    });
+&lt;/script&gt;
+    </pre>
+    <button onclick="copyCode('event-listener')">コピー</button>
+</section>
+
+<section>
+    <h2>4. DOM操作</h2>
+    <p>JavaScriptを使ってHTML要素を動的に操作する方法です。</p>
+    <pre id="dom-manipulation">
+&lt;div id="content"&gt;ここにテキストが表示されます&lt;/div&gt;
+&lt;script&gt;
+    document.getElementById('content').textContent = 'JavaScriptでテキストを変更しました！';
+&lt;/script&gt;
+    </pre>
+    <button onclick="copyCode('dom-manipulation')">コピー</button>
+</section>
+
+<section>
+    <h2>5. タイマー機能（setTimeoutとsetInterval）</h2>
+    <p>JavaScriptでタイマーを使って処理を遅延させる方法です。</p>
+    <pre id="timer-script">
+&lt;script&gt;
+    // 3秒後にアラートを表示
+    setTimeout(function() {
+        alert('3秒後に表示されました！');
+    }, 3000);
+
+    // 1秒ごとにカウントを表示
+    let count = 0;
+    setInterval(function() {
+        console.log('カウント: ' + count);
+        count++;
+    }, 1000);
+&lt;/script&gt;
+    </pre>
+    <button onclick="copyCode('timer-script')">コピー</button>
+</section>
+
+<section>
+    <h2>6. 条件分岐 (if/else)</h2>
+    <p>条件に応じて異なる処理を行うための`if`や`else`文を使用します。</p>
+    <pre id="conditional-script">
+&lt;script&gt;
+    let number = 10;
+
+    if (number > 5) {
+        console.log('数字は5より大きい');
+    } else {
+        console.log('数字は5以下です');
+    }
+&lt;/script&gt;
+    </pre>
+    <button onclick="copyCode('conditional-script')">コピー</button>
+</section>
+
+<section>
+    <h2>7. 繰り返し処理 (for/while)</h2>
+    <p>指定した回数だけ処理を繰り返すための`for`や`while`ループを使用します。</p>
+    <pre id="loop-script">
+&lt;script&gt;
+    // forループ
+    for (let i = 0; i &lt; 5; i++) {
+        console.log('forループの回数: ' + i);
+    }
+
+    // whileループ
+    let j = 0;
+    while (j &lt; 5) {
+        console.log('whileループの回数: ' + j);
+        j++;
+    }
+&lt;/script&gt;
+    </pre>
+    <button onclick="copyCode('loop-script')">コピー</button>
+</section>
+
+<section>
+    <h2>8. 関数の定義と呼び出し</h2>
+    <p>JavaScriptで関数を定義し、それを呼び出す方法です。</p>
+    <pre id="function-script">
+&lt;script&gt;
+    // 関数の定義
+    function greet(name) {
+        return 'こんにちは、' + name + 'さん！';
+    }
+
+    // 関数の呼び出し
+    console.log(greet('太郎'));
+&lt;/script&gt;
+    </pre>
+    <button onclick="copyCode('function-script')">コピー</button>
+</section>
+
+<section>
+    <h2>9. 配列とオブジェクト</h2>
+    <p>配列やオブジェクトを使ってデータを管理する方法です。</p>
+    <pre id="array-object-script">
+&lt;script&gt;
+    // 配列
+    let fruits = ['りんご', 'バナナ', 'ぶどう'];
+    console.log(fruits[0]);  // りんご
+
+    // オブジェクト
+    let person = {
+        name: '太郎',
+        age: 30
+    };
+    console.log(person.name);  // 太郎
+&lt;/script&gt;
+    </pre>
+    <button onclick="copyCode('array-object-script')">コピー</button>
+</section>
+
+<script>
+    function copyCode(elementId) {
+        var code = document.getElementById(elementId).innerText;
+        var tempTextArea = document.createElement("textarea");
+        tempTextArea.value = code;
+        document.body.appendChild(tempTextArea);
+        tempTextArea.select();
+        document.execCommand("copy");
+        document.body.removeChild(tempTextArea);
+        alert("コードがコピーされました！");
+    }
+</script>
+
+</body>
+</html>
