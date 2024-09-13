@@ -209,7 +209,15 @@ def home(response: Response,request: Request,game: Union[str] = Cookie(None)):
         return template("/file/",{"request": request})
     print(check_cokie(game))
     return redirect("/konoMi2")
-    
+
+
+@app.get("/dmca/", response_class=HTMLResponse)
+def home(response: Response,request: Request,game: Union[str] = Cookie(None)):
+    if check_cokie(game):
+        response.set_cookie("game","True",max_age=60 * 60 * 24 * 7)
+        return template("/tugaru/dmca.html",{"request": request})
+    print(check_cokie(game))
+    return redirect("/konoMi2")
 
 @app.get("/assets/", response_class=HTMLResponse)
 def home(response: Response,request: Request,proxy: Union[str] = Cookie(None)):
