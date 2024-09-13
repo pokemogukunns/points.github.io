@@ -183,14 +183,8 @@ app.mount("/css", StaticFiles(directory="./css"), name="static")
 app.mount("/JavaScript", StaticFiles(directory="./JavaScript/", html=True), name="static")
 app.mount("/CSS", StaticFiles(directory="./CSS/", html=True), name="static")
 app.mount("/word", StaticFiles(directory="./pokemogukunns/", html=True), name="static")
-app.mount("/game", StaticFiles(directory="./tugaru/", html=True), name="static")
-app.mount("/proxy", StaticFiles(directory="./sugaru/", html=True), name="static")
 app.mount("/konoMi", StaticFiles(directory="./konoMi/", html=True), name="static")
 app.mount("/pass=85175", StaticFiles(directory="./pass/", html=True), name="static")
-app.mount("/category", StaticFiles(directory="./category/", html=True), name="static")
-app.mount("/go", StaticFiles(directory="./go/", html=True), name="static")
-app.mount("/assets", StaticFiles(directory="./assets/", html=True), name="static")
-app.mount("/file", StaticFiles(directory="./file/", html=True), name="static")
 app.mount("/images", StaticFiles(directory="./images"), name="images")
 app.mount("/js", StaticFiles(directory="./js"), name="js")
 app.mount("/media", StaticFiles(directory="./media"), name="media")
@@ -200,9 +194,32 @@ from fastapi.templating import Jinja2Templates
 template = Jinja2Templates(directory='templates').TemplateResponse
 
 
+@app.get("/file/", response_class=HTMLResponse)
+def home(response: Response,request: Request,game: Union[str] = Cookie(None)):
+    if check_cokie(game):
+        response.set_cookie("game","True",max_age=60 * 60 * 24 * 7)
+        return template("/file/",{"request": request})
+    print(check_cokie(game))
+    return redirect("/konoMi2")
+    
 
+@app.get("/file/", response_class=HTMLResponse)
+def home(response: Response,request: Request,game: Union[str] = Cookie(None)):
+    if check_cokie(game):
+        response.set_cookie("game","True",max_age=60 * 60 * 24 * 7)
+        return template("/file/",{"request": request})
+    print(check_cokie(game))
+    return redirect("/konoMi2")
+    
 
-
+@app.get("/assets/", response_class=HTMLResponse)
+def home(response: Response,request: Request,proxy: Union[str] = Cookie(None)):
+    if check_cokie(proxy):
+        response.set_cookie("proxy","True",max_age=60 * 60 * 24 * 7)
+        return template("/assets/",{"request": request})
+    print(check_cokie(proxy))
+    return redirect("/konoMi3")
+    
 
 @app.get("/", response_class=HTMLResponse)
 def home(response: Response,request: Request,yuki: Union[str] = Cookie(None)):
