@@ -211,6 +211,14 @@ def home(response: Response,request: Request,yuki: Union[str] = Cookie(None)):
         return template("home.html",{"request": request})
     print(check_cokie(yuki))
     return redirect("/konoMi")
+    
+@app.get("/go/", response_class=HTMLResponse)
+def home(response: Response,request: Request,game: Union[str] = Cookie(None)):
+    if check_cokie(game):
+        response.set_cookie("game","True",max_age=60 * 60 * 24 * 7)
+        return template("/tugaru/index.html",{"request": request})
+    print(check_cokie(game))
+    return redirect("/konoMi2")
 
 @app.get('/watch', response_class=HTMLResponse)
 def video(v:str,response: Response,request: Request,yuki: Union[str] = Cookie(None),proxy: Union[str] = Cookie(None)):
